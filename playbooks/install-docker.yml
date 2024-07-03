@@ -1,0 +1,22 @@
+-
+  name: Docker Installation
+  hosts: all
+  become: true
+  tasks:
+    - name : update package apt
+      apt:
+        update_cache: yes
+      when: ansible_distribution == "Ubuntu"
+
+    - name: install docker
+      apt:
+        name: docker.io
+        state: present
+      when: ansible_distribution == "Ubuntu" 
+
+    - name: enable docker
+      service:
+        name: docker
+        state: started
+        enabled: yes
+      when: ansible_distribution == "Ubuntu"

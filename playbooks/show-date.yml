@@ -1,0 +1,6 @@
+-
+  name: Show Date
+  hosts: all
+  tasks:
+    - name: Show the system date
+      command: date 
