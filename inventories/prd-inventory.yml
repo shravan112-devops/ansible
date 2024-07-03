@@ -1,0 +1,7 @@
+[servers]
+prod_1 ansible_host=13.58.120.157
+
+[servers:vars]
+ansible_python_interpreter=/usr/bin/python3
+ansible_user=ubuntu
+ansible_ssh_private_key_file=/home/ubuntu/ansible-keys/new-batch-6-key.pem
